@@ -1,4 +1,4 @@
-To run the demo, you can open the file demo.html from the browser "File/Open..." menu.
+To run the python koans, you can open the file index.html.
 
 Another option is to start the built-in Python HTTP server by
 
@@ -6,8 +6,7 @@ Another option is to start the built-in Python HTTP server by
 
 The default port is 8000. To specify another port:
 
-    python -m http.server 8080
+    python -m http.server 5500
 
-Then load http://localhost:<port>/demo.html in the browser address bar.
+Then load http://localhost:<port>/index.html in the browser address bar.
 
-For more information please visit http://brython.info.
