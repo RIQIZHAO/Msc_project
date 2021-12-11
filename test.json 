@@ -1,0 +1,244 @@
+[
+    ["Equality","__==( 1 + 1 )","== ( 1 + 1 )","def question1():\n\tans=1+1\n\treturn ans\nanswer=question1()","1+1=2"],
+    ["Equality","__==( 2 + 3 )","== ( 2 + 3 )","def question1():\n\tans =2+3\n\treturn ans\nanswer=question1()","2+3=5"],
+    ["Class","class Dog:\n\tpass\nricky=Dog()\n__==isinstance(ricky, object)","question","class Dog:\n\tpass\nricky=Dog()\nanswer=isinstance(ricky, object)","hint"],
+    ["Class","class Dog:\n\tpass\n__==(Dog.__class__==type)","question","class Dog:\n\tpass\nanswer=Dog.__class__==type","hint"],
+    ["Class","class Dog:\n\tpass\n__=issubclass(Dog, object)","question", "class Dog:\n\tpass\nanswer=issubclass(Dog, object)","hint"],
+    ["comprehension","fruits = ['pineapple', 'watermelon', 'banana', \n\t'orange','apple']\ncombination = [fruit.capitalize() for fruit \n\tin fruits]\n__==combination[0]","question", "fruits = ['pineapple', 'watermelon', 'banana', 'orange','apple']\ncombination = [fruit.capitalize() for fruit in fruits]\nanswer=combination[0]","hint"],
+    ["comprehension","fruits = ['pineapple', 'watermelon', 'banana', \n\t'orange','apple']\ncombination = [fruit for fruit in fruits \n\tif len(fruit) > 6]\n__==len(combination)", "question","fruits = ['pineapple', 'watermelon', 'banana', \n\t'orange','apple']\ncombination = [fruit for fruit in fruits \n\tif len(fruit) > 6]\nanswer=len(combination)","hint"],
+    ["comprehension","list_tuples = [(1, 'apple'), (2, 'orange'), \n\t(3, 'pear')]\ncomprehension = [ value * number for number, \n\tvalue in list_tuples ]\n__==comprehension[2]","question", "list_tuples = [(1, 'apple'), (2, 'orange'), (3, 'pear')]\ncomprehension = [ value * number for number, value in list_tuples ]\nanswer=comprehension[2]","hint"],
+    ["comprehension","list_fruits = ['pear', 'apple']\nlist_meats = ['chicken', 'beef', 'fish']\ncombination = [ '{0} and {1}'.format(fruit, \n\tmeat) for fruit in list_fruits \n\tfor meat in list_meats]\n__==combination[0]","question", "list_fruits = ['pear', 'apple']\nlist_meats = ['chicken', 'beef', 'fish']\ncombination = [ '{0} and {1}'.format(fruit, meat) for fruit in list_fruits for meat in list_meats]\nanswer=combination[0]","hint"],
+    ["comprehension","combination = { letter for letter in \n\t'abbccceeee'}\n__==combination","question", "combination = { letter for letter in 'abbccceeee'}\nanswer=combination","hint"],
+    ["comprehension","dict_fruits = {'first': 'apple', 'second': \n\t'pear','third':'orange', 'fourth':\n\t'pineapple','fifth': None}\ndict_combination = { k.upper(): fruit for k, \n\tfruit in dict_fruits.items() if fruit}\n__=='first' in dict_combination","question", "dict_fruits = {'first': 'apple', 'second': 'pear','third':'orange', 'fourth':'pineapple','fifth': None}\ndict_combination = { k.upper(): fruit for k, fruit in dict_fruits.items() if fruit}\nanswer='first' in dict_combination","hint"],
+    ["comprehension","dict_fruits = {'first': 'apple', 'second': \n\t'pear','third':'orange', 'fourth':\n\t'pineapple','fifth': None}\ndict_combination = { k.upper(): fruit for k, \n\tfruit in dict_fruits.items() if fruit}\n__=='FIRST' in dict_combination","question", "dict_fruits = {'first': 'apple', 'second': 'pear','third':'orange', 'fourth':'pineapple','fifth': None}\ndict_combination = { k.upper(): fruit for k, fruit in dict_fruits.items() if fruit}\nanswer='FIRST' in dict_combination","hint"],
+    ["comprehension","dict_fruits = {'first': 'apple', 'second': \n\t'pear','third':'orange', 'fourth':\n\t'pineapple','fifth': None}\ndict_combination = { k.upper(): fruit for k, \n\tfruit in dict_fruits.items() if fruit}\n__==len(dict_fruits)","question", "dict_fruits = {'first': 'apple', 'second': 'pear','third':'orange', 'fourth':'pineapple','fifth': None}\ndict_combination = { k.upper(): fruit for k, fruit in dict_fruits.items() if fruit}\nanswer=len(dict_fruits),","hint"],
+    ["comprehension","dict_fruits = {'first': 'apple', 'second': \n\t'pear','third':'orange', 'fourth':\n\t'pineapple','fifth': None}\ndict_combination = { k.upper(): fruit for k, \n\tfruit in dict_fruits.items() if fruit}\n__==len(dict_combination)","question", "dict_fruits = {'first': 'apple', 'second': 'pear','third':'orange', 'fourth':'pineapple','fifth': None}\ndict_combination = { k.upper(): fruit for k, fruit in dict_fruits.items() if fruit}\nanswer=len(dict_combination),","hint"],
+    ["statement","if True:\n\tresult = 'true'\nelse:\n\tresult = 'false'\n__=result","question", "def if_else():\n\tif True:\n\t\tresult = 'true'\n\telse:\n\t\tresult = 'false'\n\treturn result\nanswer=if_else()","hint"],
+    ["statement","result = 'default value'\nif True:\n\tresult = 'true value'\n__==result","question", "def if_statement():\n\tresult = 'default value'\n\tif True:\n\t\tresult = 'true value'\n\treturn result\nanswer=if_statement()","hint"],
+    ["statement","if False:\n\tresult = 'first value'\nelif True:\n\tresult = 'true value'\nelse:\n\tresult = 'default value'\n__==result","question", "def if_elif_else():\n\tif False:\n\t\tresult = 'first value'\n\telif True:\n\t\tresult = 'true value'\n\telse:\n\t\tresult = 'default value'\n\treturn result\nanswer=if_elif_else()","hint"],
+    ["statement","i = 1\nresult = 1\nwhile i <= 3:\n\tresult = result * i\n\ti += 1\n__==result","question", "def while_statement():\n\ti = 1\n\tresult = 1\n\twhile i <= 3:\n\t\tresult = result * i\n\t\ti += 1\n\treturn result\nanswer=while_statement()","hint"],
+    ["statement","i = 1\nresult = 1\nwhile True:\n\tif i > 3: break\n\tresult = result * i\n\ti += 1\n__==result","question","def break_statement():\n\ti = 1\n\tresult = 1\n\twhile True:\n\t\tif i > 3: break\n\t\tresult = result * i\n\t\ti += 1\n\treturn result\nanswer=break_statement()","6"],
+    ["statement","i = 0\nresult = []\nwhile i < 10:\n\ti += 1\n\tif (i % 2) == 0: continue\n\tresult.append(i)\n__==result","question","def continue_statement():\n\ti = 0\n\tresult = []\n\twhile i < 10:\n\t\ti += 1\n\t\tif (i % 2) == 0: continue\n\t\tresult.append(i)\n\treturn result\nanswer=continue_statement()","6"],
+    ["statement","fruits = ['apple', 'pear', 'orange']\nresult = []\nfor i in fruits:\n\tresult.append(i.upper())\nreturn result\n__==result","question","def for_statement():\n\tfruits = ['apple', 'pear', 'orange']\n\tresult = []\n\tfor i in fruits:\n\t\tresult.append(i.upper())\n\treturn result\nanswer=for_statement()","['APPLE', 'PEAR', 'ORANGE']"],
+    ["dictionary","myDict = dict()\n__==type(myDict)","question","myDict = dict()\nanswer=type(myDict)","dict"],
+    ["dictionary","myDict = dict()\n__===len(myDict)","question","myDict = dict()\nanswer=len(myDict)","0"],
+    ["dictionary","fruits= {'one': 'apple','two': 'pear'}\n__==len(fruits)","question","fruits= {'one': 'apple','two': 'pear'}\nanswer=len(fruits)","2"],
+    ["dictionary","fruits= { 'one': 'apple', 'two': 'pear' }\n__==fruits['one']","question","fruits= { 'one': 'apple', 'two': 'pear' }\nanswer=fruits['one']","'apple'"],
+    ["dictionary","fruits= { 'one': 'apple', 'two': 'pear' }\nfruits['one'] = 'orange'\nupdated = { 'two': 'pear', 'one': 'orange' }\n__==(updated==fruits)","question","fruits= { 'one': 'apple', 'two': 'pear' }\nfruits['one'] = 'orange'\nupdated = { 'two': 'pear', 'one': 'orange' }\nanswer=(updated==fruits)","True"],
+    ["dictionary","dict1 = { 'one': 'apple', 'two': 'pear' }\ndict2 = { 'two': 'pear', 'one': 'apple' }\n__==(dict1 == dict2)","question","dict1 = { 'one': 'apple', 'two': 'pear' }\ndict2 = { 'two': 'pear', 'one': 'apple' }\nanswer=(dict1 == dict2)","True"],
+    ["dictionary","fruits= { 'one': 'apple', 'two': 'pear' }\n__==len(fruits.keys())","question","fruits= { 'one': 'apple', 'two': 'pear' }\nanswer=len(fruits.keys())","2"],
+    ["dictionary","fruits= { 'one': 'apple', 'two': 'pear' }\n__==len(fruits.values())","question","fruits= { 'one': 'apple', 'two': 'pear' }\nanswer=len(fruits.values())","2"],
+    ["dictionary","fruits= { 'one': 'apple', 'two': 'pear' }\n__=='one' in fruits.keys()","question","fruits= { 'one': 'apple', 'two': 'pear' }\nanswer='one' in fruits.keys()","True"],
+    ["dictionary","fruits= { 'one': 'apple', 'two': 'pear' }\n__=='two' in fruits.values()","question","fruits= { 'one': 'apple', 'two': 'pear' }\nanswer='two' in fruits.values()","False"],
+    ["dictionary","fruits= { 'one': 'apple', 'two': 'pear' }\n__=='apple' in fruits.keys()","question","fruits= { 'one': 'apple', 'two': 'pear' }\nanswer='apple' in fruits.keys()","False"],
+    ["dictionary","fruits= { 'one': 'apple', 'two': 'pear' }\n__=='pear' in fruits.values()","question","fruits= { 'one': 'apple', 'two': 'pear' }\nanswer='pear' in fruits.values()","True"],
+    ["dictionary","fruits = {}.fromkeys(('apple', 'pear', 'banana',\n\t 'pineapple', 'cherry'), 66)\n__==len(fruits)","question","fruits = {}.fromkeys(('apple', 'pear', 'banana', 'pineapple', 'cherry'), 66)\nanswer=len(fruits)","5"],
+    ["dictionary","fruits = {}.fromkeys(('apple', 'pear', 'banana',\n\t 'pineapple', 'cherry'), 66)\n__==fruits['apple']","question","fruits = {}.fromkeys(('apple', 'pear', 'banana', 'pineapple', 'cherry'), 66)\nanswer=fruits['apple']","66"],
+    ["List","myList = list()\n__==len(myList)","question","myList = list()\nanswer=len(myList)","0"],
+    ["List","nums = list()\n__==nums","question","nums = list()\nanswer=nums","[]"],
+    ["List","nums[0:] = [1]\n__==nums","question","nums[0:] = [1]\nanswer=nums","[1]"],
+    ["List","nums[1:] = [2]\n__==nums","question","nums[1:] = [2]\nanswer=nums","[1, 2]"],
+    ["List","nums=[1,2]\nnums.append(333)\n__==nums","question","nums=[1,2]\nnums.append(333)\nanswer=nums","[1, 2, 333]"],
+    ["List","fruits = ['apple', 'pear', 'banana', 'pineapple',\n\t 'cherry']\n__==fruits[3]","question","fruits = ['apple', 'pear', 'banana', 'pineapple', 'cherry']\nanswer=fruits[3]","'pineapple'"],
+    ["List","fruits = ['apple', 'pear', 'banana', 'pineapple',\n\t 'cherry']\n__==fruits[-1]","question","fruits = ['apple', 'pear', 'banana', 'pineapple', 'cherry']\nanswer=fruits[-1]","'cherry'"],
+    ["List","fruits = ['apple', 'pear', 'banana', 'pineapple'\n\t]\n__==fruits[0:1]","question","fruits = ['apple', 'pear', 'banana', 'pineapple']\nanswer=fruits[0:1]","['apple']"],
+    ["List","fruits = ['apple', 'pear', 'banana', 'pineapple'\n\t]\n__==fruits[0:2]","question","fruits = ['apple', 'pear', 'banana', 'pineapple']\nanswer=fruits[0:2]","['apple', 'pear']"],
+    ["List","fruits = ['apple', 'pear', 'banana', 'pineapple'\n\t]\n__==fruits[2:2]","question","fruits = ['apple', 'pear', 'banana', 'pineapple']\nanswer=fruits[2:2]","[]"],
+    ["List","fruits = ['apple', 'pear', 'banana', 'pineapple'\n\t]\n__==fruits[2:20]","question","fruits = ['apple', 'pear', 'banana', 'pineapple']\nanswer=fruits[2:20]","['banana', 'pineapple']"],
+    ["List","fruits = ['apple', 'pear', 'banana', 'pineapple'\n\t]\n__==fruits[4:0]","question","fruits =  ['apple', 'pear', 'banana', 'pineapple']\nanswer=fruits[4:0]","[]"],
+    ["List","fruits = ['apple', 'pear', 'banana', 'pineapple'\n\t]\n__==fruits[4:100]","question","fruits = ['apple', 'pear', 'banana', 'pineapple']\nanswer=fruits[4:100]","[]"],
+    ["List","fruits = ['apple', 'pear', 'banana', 'pineapple'\n\t]\n__==fruits[2:]","question","fruits =  ['apple', 'pear', 'banana', 'pineapple']\nanswer=fruits[2:]","['banana', 'pineapple']"],
+    ["List","fruits = ['apple', 'pear', 'banana', 'pineapple'\n\t]\n__==fruits[:2]","question","fruits =  ['apple', 'pear', 'banana', 'pineapple']\nanswer=fruits[:2]","['apple', 'pear']"],
+    ["List","__==type(range(5))","question","answer=type(range(5))","range"],
+    ["List","__=([1, 2, 3, 4, 5]==range(1,6))","question","answer=([1, 2, 3, 4, 5]==range(1,6))","False"],
+    ["List","__==list(range(5))","question","answer=list(range(5))","[0, 1, 2, 3, 4]"],
+    ["List","__==list(range(5, 9))","question","answer=list(range(5, 9))","[5, 6, 7, 8]"],
+    ["List","__==list(range(0, 8, 2))","question","answer=list(range(0, 8, 2))","[0, 2, 4, 6]"],
+    ["List","__= list(range(1, 8, 3))","question","answer= list(range(1, 8, 3))","[1, 4, 7]"],
+    ["List","__==list(range(5, -7, -4))","question","answer=list(range(5, -7, -4))","[5, 1, -3]"],
+    ["List","__==list(range(5, -8, -4))","question","answer=list(range(5, -8, -4))","[5, 1, -3, -7]"],
+    ["List","fruits =  ['apple', 'pear', 'banana']\nfruits.insert(2, 'pineapple')\n__==fruits","question","fruits =  ['apple', 'pear', 'banana']\nfruits.insert(2, 'pineapple')\nanswer=fruits","['apple', 'pear', 'pineapple', 'banana']"],
+    ["List","myList = [10, 20, 30, 40]\nmyList.append('last')\n__==myList","question","myList = [10, 20, 30, 40]\nmyList.append('last')\nanswer=myList","[10, 20, 30, 40, 'last']"],
+    ["List","myList = [10, 20, 30, 40,'last']\npopValue = myList.pop()\n__==popValue","question","myList = [10, 20, 30, 40,'last']\npopValue = myList.pop()\nanswer=popValue","'last'"],
+    ["List","myList = [10, 20, 30, 40,'last']\npopValue = myList.pop(1)\n__==myList","question","myList = [10, 20, 30, 40,'last']\npopValue = myList.pop(1)\nanswer=myList","[10, 30, 40, 'last']"],
+    ["List assignment","names = ['Ricky', 'Zhao']\n__==names","question","names = ['Ricky', 'Zhao']\nanswer=names","['Ricky', 'ZHAO']"],
+    ["List assignment","first_name, last_name = ['Ricky', 'Zhao']\n__==first_name","question","first_name, last_name = ['Ricky', 'Zhao']\nanswer=first_name","'Ricky'"],
+    ["List assignment","title, *first_names, last_name = ['Miss',\n\t 'Ricky', 'Leslie', 'Zhao']\n__==first_names","question","title, *first_names, last_name = ['Miss', 'Ricky', 'Leslie', 'Zhao']\nanswer=first_names","['Ricky', 'Leslie']"],
+    ["List assignment","title, *first_names, last_name = ['Miss',\n\t 'Ricky', 'Leslie', 'Zhao']\n__==title","question","title, *first_names, last_name = ['Miss', 'Ricky', 'Leslie', 'Zhao']\nanswer=title","'Miss'"],
+    ["List assignment","first_name, last_name = [['Ricky', 'Leslie'],\n\t 'Zhao']\n__==first_name","question","first_name, last_name = [['Ricky', 'Leslie'], 'Zhao']\nanswer=first_name","['Ricky', 'Leslie']"],
+    ["List assignment","first_name = 'Ricky'\nlast_name = 'Zhao'\nfirst_name, last_name = last_name, first_name\n__==first_name","question","first_name = 'Ricky'\nlast_name = 'Zhao'\nfirst_name, last_name = last_name, first_name\nanswer=first_name","'Zhao'"],
+    ["generator","myList = list()\njam_generator = (n + ' jam' for n in ['apple',\n\t'pear','orange'])\nfor jam in jam_generator:\n\tmyList.append(jam)\n__==myList","question","myList = list()\njam_generator = (n + ' jam' for n in ['apple','pear','orange'])\nfor jam in jam_generator:\n\tmyList.append(jam)\nanswer=myList","['apple jam', 'pear jam', 'orange jam']"],
+    ["generator","num_list = [x*2 for x in range(1,3)]\n__==num_list[0]","question","num_list = [x*2 for x in range(1,3)]\nanswer=num_list[0]","2"],
+    ["generator","num_generator = (x*2 for x in range(1,3))\n__==list(num_generator)[0]","question","num_generator = (x*2 for x in range(1,3))\nanswer=list(num_generator)[0]","2"],
+    ["generator","fruits = ('apple' for n in range(3))\nattempt1 = list(fruits)\nattempt2 = list(fruits)\n__==list(attempt1)","question","fruits = ('apple' for n in range(3))\nattempt1 = list(fruits)\nattempt2 = list(fruits)\nanswer=list(attempt1)","['apple', 'apple', 'apple']"],
+    ["generator","fruits = ('apple' for n in range(3))\nattempt1 = list(fruits)\nattempt2 = list(fruits)\n__==list(attempt2)","question","fruits = ('apple' for n in range(3))\nattempt1 = list(fruits)\nattempt2 = list(fruits)\nanswer=list(attempt2)","[]"],
+    ["generator","def generator_method():\n\tyield 'apple'\n\tyield 'pear'\n\tyield 'pineapple'\n\tyield 'cherry'\nfruits = list()\nfor fruit in generator_method():\n\tfruits.append(fruit)\n__==fruits","question","def generator_method():\n\tyield 'apple'\n\tyield 'pear'\n\tyield 'pineapple'\n\tyield 'cherry'\nfruits = list()\nfor fruit in generator_method():\n\tfruits.append(fruit)\nanswer=fruits","['apple', 'pear', 'pineapple', 'cherry']"],
+    ["generator","def generator_method():\n\tyield 'apple'\n\tyield 'pear'\n\tyield 'pineapple'\n\tyield 'cherry'\nfruit = generator_method()\n__==next(fruit)","question","def generator_method():\n\tyield 'apple'\n\tyield 'pear'\n\tyield 'pineapple'\n\tyield 'cherry'\nfruit = generator_method()\nanswer=next(fruit)","'apple'"],
+    ["generator","def generator_method():\n\tyield 'apple'\n\tyield 'pear'\n\tyield 'pineapple'\n\tyield 'cherry'\nfruit = generator_method()\nnext(fruit)\n__==next(fruit)","question","def generator_method():\n\tyield 'apple'\n\tyield 'pear'\n\tyield 'pineapple'\n\tyield 'cherry'\nfruit = generator_method()\nnext(fruit)\nanswer=next(fruit)","'pear'"],
+    ["generator","def square(num):\n\tfor x in num:\n\t\tyield x * x\nresult = square(range(2,5))\n__==list(result)","question","def square(num):\n\tfor x in num:\n\t\tyield x * x\nresult = square(range(2,5))\nanswer=list(result)","[4, 9, 16]"],
+    ["generator","def sum(nums):\n\tvalue = 0\n\tfor num in nums:\n\t\tvalue =value+num\n\t\tyield value\nresult = sum(range(2,5))\n__==list(result)","question","def sum(nums):\n\tvalue = 0\n\tfor num in nums:\n\t\tvalue =value+num\n\t\tyield value\nresult = sum(range(2,5))\nanswer=list(result)","[2, 5, 9]"],
+    ["generator","def simple_generator():\n\tresult = yield\n\tyield result\ngenerator = simple_generator()\nnext(generator)\n__==generator.send(1 + 2)","question","def simple_generator():\n\tresult = yield\n\tyield result\ngenerator = simple_generator()\nnext(generator)\nanswer=generator.send(1 + 2)","3"],
+    ["generator","def generator_yield():\n\tvalue = yield\n\tif value:\n\t\tyield value\n\telse:\n\t\tyield 'no value'\ngenerator = generator_yield()\nnext(generator)\n__==generator.send('with value')","question","def generator_yield():\n\tvalue = yield\n\tif value:\n\t\tyield value\n\telse:\n\t\tyield 'no value'\ngenerator = generator_yield()\nnext(generator)\nanswer=generator.send('with value')","'with value'"],
+    ["generator","def generator_yield():\n\tvalue = yield\n\tif value:\n\t\tyield value\n\telse:\n\t\tyield 'no value'\ngenerator2 = generator_yield()\nnext(generator2)\n__==next(generator2)","question","def generator_yield():\n\tvalue = yield\n\tif value:\n\t\tyield value\n\telse:\n\t\tyield 'no value'\ngenerator2 = generator_yield()\nnext(generator2)\nanswer=next(generator2)","'no value'"],
+    ["generator","def generator_yield():\n\tvalue = yield\n\tif value:\n\t\tyield value\n\telse:\n\t\tyield 'no value'\ngenerator = generator_yield()\nnext(generator)\n__==generator.send(None)","question","def generator_yield():\n\tvalue = yield\n\tif value:\n\t\tyield value\n\telse:\n\t\tyield 'no value'\ngenerator = generator_yield()\nnext(generator)\nanswer=generator.send(None)","'no value'"],
+    ["Iteration","nums = iter(range(1,4))\nvalue = 0\nfor num in nums:\n\tvalue = value+num\n__==value","question","nums = iter(range(1,4))\nvalue = 0\nfor num in nums:\n\tvalue = value+num\nanswer=value","6"],
+    ["Iteration","def test_iteration():\n\tfruits = iter(['apple','pear','orange'])\n\ttry:\n\t\tnext(fruits)\n\t\tnext(fruits)\n\t\tresult=next(fruits)\n\t\treturn result\n\texcept StopIteration as ex:\n\t\treturn 'Ran out of iterations'\n__==test_iteration()","question","def test_iteration():\n\tfruits = iter(['apple','pear','orange'])\n\ttry:\n\t\tnext(fruits)\n\t\tnext(fruits)\n\t\tresult=next(fruits)\n\t\treturn result\n\texcept StopIteration as ex:\n\t\treturn 'Ran out of iterations'\nanswer=test_iteration()","'orange'"],
+    ["Iteration","def test_iteration():\n\tfruits = iter(['apple','pear','orange'])\n\ttry:\n\t\tnext(fruits)\n\t\tnext(fruits)\n\t\tnext(fruits)\n\t\tresult=next(fruits)\n\t\treturn result\n\texcept StopIteration as ex:\n\t\treturn 'Ran out of iterations'\n__==test_iteration()","question","def test_iteration():\n\tfruits = iter(['apple','pear','orange'])\n\ttry:\n\t\tnext(fruits)\n\t\tnext(fruits)\n\t\tnext(fruits)\n\t\tresult=next(fruits)\n\t\treturn result\n\texcept StopIteration as ex:\n\t\treturn 'Ran out of iterations'\nanswer=test_iteration()","'Ran out of iterations'"],
+    ["Iteration","def addFive(item):\n\treturn item + 5\nnum_list = [1, 2, 3]\nmapped_list = list()\nmapping = map(addFive, num_list)\n__==type(mapping)","question","def addFive(i):\n\treturn i + 5\nnum_list = [1, 2, 3]\nmapped_list = list()\nmapping = map(addFive, num_list)\nanswer=type(mapping)","map"],
+    ["Iteration","def addFive(item):\n\treturn item + 5\nnum_list = [1, 2, 3]\nmapped_list = list()\nmapping = map(addFive, num_list) \nfor item in mapping:\n\tmapped_list.append(item)\n__==mapped_list","question","def addFive(item):\n\treturn item + 5\nnum_list = [1, 2, 3]\nmapped_list = list()\nmapping = map(addFive, num_list) \nfor item in mapping:\n\tmapped_list.append(item)\nanswer=mapped_list","[6, 7, 8]"],
+    ["Iteration","def even(i):\n\treturn (i % 2) == 0\nnums = [1, 2, 3, 4, 5, 6]\neven_num = list()\nfor i in filter(even, nums):\n\teven_num.append(i)\n__==even_num","question","def even(item):\n\treturn (item % 2) == 0\nnums = [1, 2, 3, 4, 5, 6]\neven_num = list()\nfor item in filter(even, nums):\n\teven_num.append(item)\nanswer=even_num","[2, 4, 6]"],
+    ["Iteration","def first_found():\n\tdef big_fruit(i):\n\t\treturn len(i) > 5\n\tfruits = ['apple', 'pear', 'cherry', \n\t'pineapple']\n\tfruit = None\n\titerator = filter(big_fruit, fruits)\n\ttry:\n\t\tfruit = next(iterator)\n\t\treturn fruit\n\texcept StopIteration:\n\t\treturn 'Ran out of big names'\nanswer=first_found()","question","def first_found():\n\tdef big_fruit(i):\n\t\treturn len(i) > 5\n\tfruits = ['apple', 'pear', 'cherry', 'pineapple']\n\tfruit = None\n\titerator = filter(big_fruit, fruits)\n\ttry:\n\t\tfruit = next(iterator)\n\t\treturn fruit\n\texcept StopIteration:\n\t\treturn 'Ran out of big names'\nanswer=first_found()","'cherry'"],
+    ["Iteration","import functools\ndef add(a,b):\n\treturn a + b\nresult = functools.reduce(add, [1, 2, 3])\n__==type(result)", "question","import functools\ndef add(a,b):\n\treturn a + b\nresult = functools.reduce(add, [1, 2, 3])\nanswer=type(result)","int"],
+    ["Iteration","import functools\ndef add(a,b):\n\treturn a + b\nresult = functools.reduce(add, [1, 2, 3])\n__==result","question","import functools\ndef add(a,b):\n\treturn a + b\nresult = functools.reduce(add, [1, 2, 3])\nanswer=result","6"],
+    ["Iteration","import functools\ndef multiply(a,b):\n\treturn a * b\nresult2 = functools.reduce(multiply, [1, 2, 3], \n\t2)\n__==result2","question","import functools\ndef multiply(a,b):\n\treturn a * b\nresult2 = functools.reduce(multiply, [1, 2, 3], 2)\nanswer=result2","12"],
+    ["Iteration","for num in range(1,5):\n\tpass\n__==num","question","for num in range(1,5):\n\tpass\nanswer=num","4"],
+    ["set","fruits = ['apple', 'pear', 'orange']\nunique = set(fruits)\n__==unique","question","fruits = ['apple', 'pear', 'orange']\nunique = set(fruits)\nanswer=unique","{'apple', 'orange', 'pear'}"],
+    ["set","__==(set([1,2,3])== {1, 2, 3})","question","answer=(set([1,2,3])== {1, 2, 3})","True"],
+    ["set","__==(set([])==set())","question","answer=(set([])==set())","True"],
+    ["set","__=={2, 3, 4}.__class__","question","answer={2, 3, 4}.__class__","set"],
+    ["set","__=={'one': 'apple', 'two': 'pear'}.__class__","question","answer={'one': 'apple', 'two': 'pear'}.__class__","dict"],
+    ["set","__=={}.__class__","question","answer={}.__class__","dict"],
+    ["set","__==(set(['12345'])=={'12345'})","question","answer=(set(['12345'])=={'12345'})","True"],
+    ["set","__==({'1', '2', '3', '4', '5'}==set('12345'))","question","answer=({'1', '2', '3', '4', '5'}==set('12345'))","True"],
+    ["set","__==sorted(set('123'))","question","answer=sorted(set('123'))","['1', '2', '3']"],
+    ["set","fruits1 = {'apple', 'pear', 'orange'}\nfruits2 = {'apple', 'pear', 'pineapple'}\n__==fruits1 - fruits2","question","fruits1 = {'apple', 'pear', 'orange'}\nfruits2 = {'apple', 'pear', 'pineapple'}\nanswer=fruits1 - fruits2","{'orange'}"],
+    ["set","fruits1 = {'apple', 'pear', 'orange'}\nfruits2 = {'apple', 'pear', 'pineapple'}\n__==fruits1 | fruits2","question","fruits1 = {'apple', 'pear', 'orange'}\nfruits2 = {'apple', 'pear', 'pineapple'}\nanswer=fruits1 | fruits2","{'apple', 'orange', 'pear', 'pineapple'}"],
+    ["set","fruits1 = {'apple', 'pear', 'orange'}\nfruits2 = {'apple', 'pear', 'pineapple'}\n__== fruits1 & fruits2","question","fruits1 = {'apple', 'pear', 'orange'}\nfruits2 = {'apple', 'pear', 'pineapple'}\nanswer= fruits1 & fruits2","{'apple', 'pear'}"],
+    ["set","fruits1 = {'apple', 'pear', 'orange'}\nfruits2 = {'apple', 'pear', 'pineapple'}\n__== fruits1 ^ fruits2","question","fruits1 = {'apple', 'pear', 'orange'}\nfruits2 = {'apple', 'pear', 'pineapple'}\nanswer= fruits1 ^ fruits2","{'orange', 'pineapple'}"],
+    ["set","__==127 in {127, 0, 0, 1}","question","answer=127 in {127, 0, 0, 1}","True"],
+    ["set","__=='pay' not in set('apple pie')","question","answer='cow' not in set('apple pie')","True"],
+    ["set","__==set('pie') <= set('apple pie')","question","answer=set('pie') <= set('apple pie')","True"],
+    ["set","__==set('pie').issubset(set('apple pie')","question","answer=set('pie').issubset(set('apple pie'))","True"],
+    ["set","__==set('cake') > set('pie')","question","answer=set('cake') > set('pie')","False"],
+    ["string","string = 'Hello, ricky!'\n__==isinstance(string, str)","question","string = 'Hello, ricky!'\nanswer=isinstance(string, str)","True"],
+    ["string","string = '''Hello, Ricky!'''\n__==isinstance(string, str)","question","string = '''Hello, Ricky!'''\nanswer=isinstance(string, str)","True"],
+    ["string","string = r'Hello Ricky!'\n__==isinstance(string, str)","question","string = r'Hello Ricky!'\nanswer=isinstance(string, str)","True"],
+    ["string","string = \"Hello, ricky!\"\n__==isinstance(string, str)","question","string = \"Hello, ricky!\"\nstring=isinstance(string, str)","\"Hello, ricky!\""],
+    ["string","string = \"\"\"Hello, Ricky!\"\"\"\n__==isinstance(string, str)","question","string = \"\"\"Hello, Ricky!\"\"\"\nanswer=isinstance(string, str)","True"],
+    ["string","string = r\"Hello Ricky!\"\n__==isinstance(string, str)","question","string = r\"Hello Ricky!\"\nanswer=isinstance(string, str)","True"],
+    ["string","string = \"Hello, \" + \"Ricky\"\n__==string","question","string = \"Hello, \" + \"Ricky\"\nanswer=string","\"Hello, world\""],
+    ["string","string = 'Hello,\"Ricky!\"'\n__==string","question","string = 'Hello,\"Ricky!\"'\nanswer=string","'Hello,\"Ricky!\"'"],
+	["string","string = \"Don't\"\n__==string","question","string = \"Don't\"\nanswer=string","\"Don't\""],
+	["string","string = \"I am Ricky, I am fine.\"\n__==len(string)","question","string = \"I am Ricky, I am fine.\"\nanswer=len(string)","22"],
+	["string","string = \"\"\"\nHello,\nRicky!\n\"\"\"\n__==len(string)","question","string = \"\"\"\nHello,\nRicky!\n\"\"\"\nanswer=len(string)","15"],
+	["string","string = \"Hello, \" + \"Ricky\"\nanswer=string","question","string = \"Hello, \" + \"Ricky\"\nanswer=string","\"Hello, Ricky\""],
+	["string","string = \"Hello\" \", \" \"Ricky\"\n__==string","question","string = \"Hello\" \", \" \"Ricky\"\nanswer=string","\"Hello, Ricky\""],
+	["string","word1 = \"Hello, \"\nword2 = \"Ricky\"\nstring = word1 + word2\n__==word2","question","word1 = \"Hello, \"\nword2 = \"Ricky\"\nstring = word1 + word2\nanswer=word2","\"Hello, \""],
+	["string","word1 = \"Hello, \"\nword2 = \"Ricky\"\nword1 += word2\n__==word1","question","word1 = \"Hello, \"\nword2 = \"Ricky\"\nword1 += word2\nanswer=word1","\"Hello, Ricky\""],
+	["string","word_original = \"Hello, \"\nword1 = word_original\nword2 = \"Ricky\"\nword1 += word2\n__==word_original","question","word_original = \"Hello, \"\nword1 = word_original\nword2 = \"Ricky\"\nword1 += word2\nanswer=word_original","\"Hello, \""],
+	["tuple","creating_tuple =  (1, 2, 5)\n__==creating_tuple[2]","question","creating_tuple =  (1, 2, 3)\nanswer=creating_tuple[2]","3"],
+	["tuple","def immutable_tuples():\n\ttuple =  (1, 2, 5)\n\ttry:\n\t\ttuple[2] = \"five\"\n\t\treturn tuple\n\texcept:\n\t\treturn \"'tuple' object does not \n\tsupport item assignment\"\n__==immutable_tuples()","question","def immutable_tuples():\n\ttuple =  (1, 2, 5)\n\ttry:\n\t\ttuple[2] = \"five\"\n\t\treturn tuple\n\texcept:\n\t\treturn \"'tuple' object does not support item assignment\"\nanswer=immutable_tuples() ","\"'tuple' object does not support item assignment\""],
+	["tuple","def immutable_tuples():\n\ttuple =  (1, 2, 5)\n\ttry:\n\t\ttuple.append(\"value\")\n\t\treturn tuple\n\texcept:\n\t\treturn \"'tuple' object does not \n\tsupport item assignment\"\nanswer=immutable_tuples()","question","def immutable_tuples():\n\ttuple =  (1, 2, 5)\n\ttry:\n\t\ttuple.append(\"value\")\n\t\treturn tuple\n\texcept:\n\t\treturn \"'tuple' object does not support item assignment\"\nanswer=immutable_tuples() ","\"'tuple' object does not support item assignment\""],
+	["tuple","tuple = (1, 2, 5)\nlist = list(tuple)\nlist.append(\"value\")\ntuple = tuple(list)\n__==tuple","question","tuple = (1, 2, 5)\nlist = list(tuple)\nlist.append(\"value\")\ntuple = tuple(list)\nanswer=tuple","(1,2,5,\"value\")"],
+	["tuple","__==((1,).__class__)","question","answer=((1,).__class__) ","tuple"],
+	["tuple","__==tuple('Ricky!')","question","answer=tuple('Ricky!') ","('R', 'i', 'c', 'k', 'y', '!')"],
+	["tuple","__==(tuple() , ())","question","answer=(tuple() , ()) ","True"],
+	["tuple","tuple1 = (1, 2, 'z')\ntuple2 = (2, 3, 'r')\ntuple = ('ricky', tuple1, tuple2)\n__==tuple","question","tuple1 = (1, 2, 'z')\ntuple2 = (2, 3, 'r')\ntuple = ('ricky', tuple1, tuple2)\nanswer=tuple ","('ricky', (1, 2, 'z'), (2, 3, 'r'))"],
+	["tuple","food = [('fruits', (2, 3,'apple'), (3, 4,\n\t'pear')),('meats', (4,5,'beef'), \n\t(5,6,'fish'))]\nfood.append(('pie', (6,7,'apple pie'), \n\t(7,8,'pear pie')))\n__==food[2][0]","question","food = [('fruits', (2, 3,'apple'), (3, 4,'pear')),('meats', (4,5,'beef'), (5,6,'fish'))]\nfood.append(('pie', (6,7,'apple pie'), (7,8,'pear pie')))\nanswer=food[2][0] ","'pie'"],
+	["True and False","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge(True)","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge(True) ","'true'"],
+	["True and False","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__=judge(False)","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge(False)","'false'"],
+	["True and False","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge(None)","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge(None) ","'false'"],
+	["True and False","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge(0)","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge(0) ","'false'"],
+	["True and False","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge([])","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge([]) ","'false'"],
+	["True and False","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge(())","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge(()) ","'false'"],
+	["True and False","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge({})","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge({}) ","'false'"],
+	["True and False","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge(set())","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge(set()) ","'false'"],
+	["True and False","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge('')","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge('') ","'false'"],
+	["True and False","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge(1)","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge(1) ","'true'"],
+	["True and False","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge((1,))","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge((1,)) ","'true'"],
+	["True and False","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge('Python')","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge('Python') ","'true'"],
+	["True and False","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge(' ')","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge(' ') ","'true'"],
+	["True and False","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge('0')","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge('0') ","'true'"],
+	["string manipulation","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge(True)","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge(True) ","'true'"],
+	["string manipulation","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\n__==judge(True)","question","def judge(condition):\n\tif condition:\n\t\treturn 'true'\n\telse:\n\t\treturn 'false'\nanswer=judge(True) ","'true'"],
+	["string manipulation","value1 = 1\nvalue2 = 'two'\nstring = 'values: {0} and {1}'.format(value1, \n\tvalue2)\n__==string","question","value1 = 1\nvalue2 = 'two'\nstring = 'values: {0} and {1}'.format(value1, value2)\nanswer=string","'values: 1 and two'"],
+	["string manipulation","value1 = 1\nvalue2 = 'two'\nstring = 'values: {1}, {0}, {0} and {1}!'.\n\tformat(value1, value2)\n__==string","question","value1 = 1\nvalue2 = 'two'\nstring = 'values: {1}, {0}, {0} and {1}!'.format(value1, value2)\nanswer=string","'values: two, 1, 1 and two!'"],
+	["string manipulation","string = 'apple, pineapple and pear'\n__==string[7:10]","question","string = 'apple, pineapple and pear'\nanswer=string[7:10]","'pin'"],
+	["string manipulation","string = 'apple, pineapple and pear'\n__==string[1]","question","string = 'apple, pineapple and pear'\nanswer=string[1]","'p'"],
+	["string manipulation","__==ord('a')","question","answer=ord('a')","97"],
+	["string manipulation","__==(ord('b') == (ord('a') + 1))","question","answer=(ord('b') == (ord('a') + 1))","True"],
+	["string manipulation","string = 'apple pear orange'\nwords = string.split()\n__==words","question","string = 'apple pear orange'\nwords = string.split()\nanswer=words","['apple', 'pear', 'orange']"],
+	["string manipulation","import re \nstring = 'apple,pear;orange,cherry'\npattern = re.compile(',|;')\nwords = pattern.split(string)\n__== words","question","import re \nstring = 'apple,pear;orange,cherry'\npattern = re.compile(',|;')\nwords = pattern.split(string)\nanswer= words","['apple', 'pear', 'orange', 'cherry']"],
+	["string manipulation","words = ['I','like','apple']\n__==' '.join(words)","question","words = ['I','like','apple']\nanswer=' '.join(words)","'I like apple'"],
+	["string manipulation","__=='apple'.capitalize()","question","answer='apple'.capitalize()","'Apple'"],
+	["string manipulation","__=='apple'.upper()","question","answer='apple'.upper()","'APPLE'"],
+	["string manipulation","__=='Apple'.lower()","question","answer='Apple'.lower()","'apple'"],
+	["string manipulation","__=='i like apple'.title()","question","answer='i like apple'.title()","'I Like Apple'"],
+	["string manipulation","__=='I Like Apple'.swapcase()","question","answer='I Like Apple'.swapcase()","'i lIKE aPPLE'"],
+    ["inheritance","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\t@property\n\tdef name(self):\n\t\treturn self._name\n\tdef roll_over(self):\n\t\treturn 'happy'\nclass Husky(Dog):\n\tdef sit(self):\n\t\treturn 'now sitting'\n\tdef roll_over(self):\n\t\treturn 'sad'\n__==issubclass(Husky,Dog)","question","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\t@property\n\tdef name(self):\n\t\treturn self._name\n\tdef roll_over(self):\n\t\treturn 'happy'\nclass Husky(Dog):\n\tdef sit(self):\n\t\treturn 'now sitting'\n\tdef roll_over(self):\n\t\treturn 'sad'\nanswer=issubclass(Husky,Dog)","True"],
+	["inheritance","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\t@property\n\tdef name(self):\n\t\treturn self._name\n\tdef roll_over(self):\n\t\treturn 'happy'\nclass Husky(Dog):\n\tdef sit(self):\n\t\treturn 'now sitting'\n\tdef roll_over(self):\n\t\treturn 'sad'\n__==issubclass(Husky,object)","question","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\t@property\n\tdef name(self):\n\t\treturn self._name\n\tdef roll_over(self):\n\t\treturn 'happy'\nclass Husky(Dog):\n\tdef sit(self):\n\t\treturn 'now sitting'\n\tdef roll_over(self):\n\t\treturn 'sad'\nanswer=issubclass(Husky,object)","True"],
+	["inheritance","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\t@property\n\tdef name(self):\n\t\treturn self._name\n\tdef roll_over(self):\n\t\treturn 'happy'\nclass Husky(Dog):\n\tdef sit(self):\n\t\treturn 'now sitting'\n\tdef roll_over(self):\n\t\treturn 'sad'\nricky = Husky('Ricky')\n__==ricky.name","question","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\t@property\n\tdef name(self):\n\t\treturn self._name\n\tdef roll_over(self):\n\t\treturn 'happy'\nclass Husky(Dog):\n\tdef sit(self):\n\t\treturn 'now sitting'\n\tdef roll_over(self):\n\t\treturn 'sad'\nricky = Husky('Ricky')\nanswer=ricky.name","'Ricky'"],
+	["inheritance","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\t@property\n\tdef name(self):\n\t\treturn self._name\n\tdef roll_over(self):\n\t\treturn 'happy'\nclass Husky(Dog):\n\tdef sit(self):\n\t\treturn 'now sitting'\n\tdef roll_over(self):\n\t\treturn 'sad'\nricky = Husky('Ricky')\n__==ricky.sit()","question","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\t@property\n\tdef name(self):\n\t\treturn self._name\n\tdef roll_over(self):\n\t\treturn 'happy'\nclass Husky(Dog):\n\tdef sit(self):\n\t\treturn 'now sitting'\n\tdef roll_over(self):\n\t\treturn 'sad'\nricky = Husky('Ricky')\nanswer=ricky.sit()","'now sitting'"],
+	["inheritance","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\t@property\n\tdef name(self):\n\t\treturn self._name\n\tdef roll_over(self):\n\t\treturn 'happy'\nclass Husky(Dog):\n\tdef sit(self):\n\t\treturn 'now sitting'\n\tdef roll_over(self):\n\t\treturn 'sad'\nricky = Husky('Ricky')\n__==ricky.roll_over()","question","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\t@property\n\tdef name(self):\n\t\treturn self._name\n\tdef roll_over(self):\n\t\treturn 'happy'\nclass Husky(Dog):\n\tdef sit(self):\n\t\treturn 'now sitting'\n\tdef roll_over(self):\n\t\treturn 'sad'\nricky = Husky('Ricky')\nanswer=ricky.roll_over()","'sad'"],
+	["inheritance","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\t@property\n\tdef name(self):\n\t\treturn self._name\n\tdef roll_over(self):\n\t\treturn 'happy'\nclass Husky(Dog):\n\tdef sit(self):\n\t\treturn 'now sitting'\n\tdef roll_over(self):\n\t\treturn 'sad'\nricky = Dog('Ricky')\n__==ricky.roll_over()","question","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\t@property\n\tdef name(self):\n\t\treturn self._name\n\tdef roll_over(self):\n\t\treturn 'happy'\nclass Husky(Dog):\n\tdef sit(self):\n\t\treturn 'now sitting'\n\tdef roll_over(self):\n\t\treturn 'sad'\nricky = Dog('Ricky')\nanswer=ricky.roll_over()","'sound'"],
+	["inheritance","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\tdef roll_over(self):\n\t\treturn 'sound'\nclass Husky(Dog):\n\tdef roll_over(self):\n\t\treturn super().roll_over()+\n\t',husky'\nricky = Husky('Ricky')\n__==ricky.roll_over()","question","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\tdef roll_over(self):\n\t\treturn 'sound'\nclass Husky(Dog):\n\tdef roll_over(self):\n\t\treturn super().roll_over()+',husky'\nricky = Husky('Ricky')\nanswer=ricky.roll_over()","'sound,husky'"],
+	["method","def global_add(x,y):\n\treturn x + y\n__==global_add(1,2)","question","def global_add(x,y):\n\treturn x + y\nanswer=global_add(1,2)","3"],
+	["method","def global_add(x,y):\n\treturn x + y\ndef wrong_arguments():\n\ttry:\n\t\tglobal_add()\n\texcept:\n\t\treturn 'missing 2 required \n\tpositional arguments'\n__==wrong_arguments()","question","def global_add(x,y):\n\treturn x + y\ndef wrong_arguments():\n\ttry:\n\t\tglobal_add()\n\texcept:\n\t\treturn 'missing 2 required positional arguments'\nanswer=wrong_arguments()","'missing 2 required positional arguments'"],
+	["method","def global_add(x,y):\n\treturn x + y\ndef wrong_arguments():\n\ttry:\n\t\tglobal_add(1, 2, 3)\n\texcept:\n\t\treturn 'missing 2 required \n\tpositional arguments'\n__==wrong_arguments()","question","def global_add(x,y):\n\treturn x + y\ndef wrong_arguments():\n\ttry:\n\t\tglobal_add(1, 2, 3)\n\texcept:\n\t\treturn 'missing 2 required positional arguments'\nanswer=wrong_arguments()","'missing 2 required positional arguments'"],
+	["method","def add_method(a, b):\n\tsum = a + b\n__==(None==add_method(1,2))","question","def add_method(a, b):\n\tsum = a + b\nanswer=(None==add_method(1,2))","True"],
+	["method","def default_value(a, b='default_value'):\n\treturn [a, b]\nanswer=default_value(1)","question","def default_value(a, b='default_value'):\n\treturn [a, b]\nanswer=default_value(1)","[1, 'default_value']"],
+	["method","def args_method(*args):\n\treturn args\n__==args_method()","question","def args_method(*args):\n\treturn args\nanswer=args_method()","()"],
+	["method","def args_method(*args):\n\treturn args\n__==args_method('one')","question","def args_method(*args):\n\treturn args\nanswer=args_method('one')","('one',)"],
+	["method","def args_method(*args):\n\treturn args\n__==args_method('one', 'two')","question","def args_method(*args):\n\treturn args\nanswer=args_method('one', 'two')","('one', 'two')"]
+	
+	
+]
+["string","string = \"Hello, ricky!\"\n__==isinstance(string, str)","question","string = \"Hello, ricky!\"\nstring=isinstance(string, str)","\"Hello, ricky!\""],
+ ["string","string = \"Hello, \" + \"Ricky\"\n__==string","question","string = \"Hello, \" + \"Ricky\"\nanswer=string","\"Hello, world\""],
+   ["string","word1 = \"Hello, \"\nword2 = \"Ricky\"\nstring = word1 + word2\n__==word2","question","word1 = \"Hello, \"\nword2 = \"Ricky\"\nstring = word1 + word2\nanswer=word2","\"Hello, \""],
+	 ["List assignment","names = ['Ricky', 'Zhao']\n__==names","question","names = ['Ricky', 'Zhao']\nanswer=names","['Ricky', 'ZHAO']"],
+    ["tuple","tuple = (1, 2, 5)\nlist = list(tuple)\nlist.append(\"value\")\ntuple = tuple(list)\n__==tuple","question","tuple = (1, 2, 5)\nlist = list(tuple)\nlist.append(\"value\")\ntuple = tuple(list)\nanswer=tuple","(1,2,5,\"value\")"],
+	["tuple","__==((1,).__class__)","question","answer=((1,).__class__) ","tuple"],
+	["tuple","__==(tuple() , ())","question","answer=(tuple() , ()) ","True"],
+	 ["comprehension","dict_fruits = {'first': 'apple', 'second': \n\t'pear','third':'orange', 'fourth':\n\t'pineapple','fifth': None}\ndict_combination = { k.upper(): fruit for k, \n\tfruit in dict_fruits.items() if fruit}\n__==len(dict_fruits)","question", "dict_fruits = {'first': 'apple', 'second': 'pear','third':'orange', 'fourth':'pineapple','fifth': None}\ndict_combination = { k.upper(): fruit for k, fruit in dict_fruits.items() if fruit}\nanswer=len(dict_fruits),","5"],
+    ["comprehension","dict_fruits = {'first': 'apple', 'second': \n\t'pear','third':'orange', 'fourth':\n\t'pineapple','fifth': None}\ndict_combination = { k.upper(): fruit for k, \n\tfruit in dict_fruits.items() if fruit}\n__==len(dict_combination)","question", "dict_fruits = {'first': 'apple', 'second': 'pear','third':'orange', 'fourth':'pineapple','fifth': None}\ndict_combination = { k.upper(): fruit for k, fruit in dict_fruits.items() if fruit}\nanswer=len(dict_combination),","4"],
+["inheritance","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\t@property\n\tdef name(self):\n\t\treturn self._name\n\tdef roll_over(self):\n\t\treturn 'happy'\nclass Husky(Dog):\n\tdef sit(self):\n\t\treturn 'now sitting'\n\tdef roll_over(self):\n\t\treturn 'sad'\nricky = Dog('Ricky')\n__==ricky.roll_over()","question","class Dog:\n\tdef __init__(self, name):\n\t\tself._name = name\n\t@property\n\tdef name(self):\n\t\treturn self._name\n\tdef roll_over(self):\n\t\treturn 'happy'\nclass Husky(Dog):\n\tdef sit(self):\n\t\treturn 'now sitting'\n\tdef roll_over(self):\n\t\treturn 'sad'\nricky = Dog('Ricky')\nanswer=ricky.roll_over()","'sound'"]
+    def test_correctAnswer(self):
+        self.drivers = webdriver.Chrome('/usr/local/bin/chromedriver')
+        print(dir(self.drivers))
+        url = "file:///Users/zhaoriqi/web/index.html"
+        self.drivers.get(url)
+        self.drivers.maximize_window()
+        print("window have already")
+        self.position = self.drivers.get_window_position()
+        print("position:", self.position)
+        self.drivers.set_window_position(0, 0)
+        self.position = self.drivers.get_window_position()
+        print("current position:", self.position)
+        #time.sleep(2)
+        i = 0
+        while i<len(answer_list):
+            self.drivers.find_element_by_id("input").send_keys(answer_list[i])
+            self.drivers.find_element_by_id("submit-btn").click()
+            self.welldone_alert=self.drivers.switch_to.alert
+            self.assertEqual('well done!', self.welldone_alert.text, msg='this is not correct answer')
+            #time.sleep(2)
+            self.welldone_alert.accept()
+            #time.sleep(2)
+            self.drivers.find_element_by_id("next-btn").click()
+            i=i+1
+
+ def test_correctAnswer(self):
+        self.drivers = webdriver.Chrome('/usr/local/bin/chromedriver')
+        print(dir(self.drivers))
+        url = "file:///Users/zhaoriqi/web/index.html"
+        self.drivers.get(url)
+        self.drivers.maximize_window()
+        print("window have already")
+        self.position = self.drivers.get_window_position()
+        print("position:", self.position)
+        self.drivers.set_window_position(0, 0)
+        self.position = self.drivers.get_window_position()
+        print("current position:", self.position)
+        # time.sleep(2)
+        i = 0
+        while i < len(answer_list):
+            self.drivers.find_element_by_id("input").send_keys(answer_list[i])
+            self.drivers.find_element_by_id("submit-btn").click()
+            self.welldone_alert = self.drivers.switch_to.alert
+            self.assertEqual('well done!', self.welldone_alert.text, msg='this is not correct answer')
+            # time.sleep(2)
+            self.welldone_alert.accept()
+            # time.sleep(2)
+            self.drivers.find_element_by_id("next-btn").click()
+            i = i + 1

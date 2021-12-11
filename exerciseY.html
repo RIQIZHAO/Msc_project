@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ricky project</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython_stdlib.js">
+    </script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style1.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head >
+
+    <script type="text/python">
+    from browser import document, html, alert, window
+    intended_question=[ 
+    ["List","myList = list()\n__==len(myList)","question","myList = list()\nanswer=len(myList)","0"],
+    ["List","nums[0:] = [1]\n__==nums","question","nums[0:] = [1]\nanswer=nums","[1]"],
+    ["List","fruits = ['apple', 'pear', 'banana', 'pineapple',\n\t 'cherry']\n__==fruits[3]","question","fruits = ['apple', 'pear', 'banana', 'pineapple', 'cherry']\nanswer=fruits[3]","'pineapple'"],
+    ["List","fruits = ['apple', 'pear', 'banana', 'pineapple'\n\t]\n__==fruits[2:]","question","fruits =  ['apple', 'pear', 'banana', 'pineapple']\nanswer=fruits[2:]","['banana', 'pineapple']"],
+    ["List","__==list(range(5))","question","answer=list(range(5))","[0, 1, 2, 3, 4]"],
+    ["List","__=([1, 2, 3, 4, 5]==range(1,6))","question","answer=([1, 2, 3, 4, 5]==range(1,6))","False"],
+    ["List","myList = [10, 20, 30, 40,'last']\npopValue = myList.pop(1)\n__==myList","question","myList = [10, 20, 30, 40,'last']\npopValue = myList.pop(1)\nanswer=myList","[10, 30, 40, 'last']"],
+    ["List","title, *first_names, last_name = ['Miss',\n\t 'Ricky', 'Leslie', 'Zhao']\n__==first_names","question","title, *first_names, last_name = ['Miss', 'Ricky', 'Leslie', 'Zhao']\nanswer=first_names","['Ricky', 'Leslie']"],
+    ["List","title, *first_names, last_name = ['Miss',\n\t 'Ricky', 'Leslie', 'Zhao']\n__==title","question","title, *first_names, last_name = ['Miss', 'Ricky', 'Leslie', 'Zhao']\nanswer=title","'Miss'"]
+      
+    
+]
+
+
+
+    document.getElementById('input').focus()
+    global i
+    i=0
+    def updateLabel():
+        global percent
+        global correct_answer
+        document.getElementById('chapter').innerHTML=intended_question[i][0]
+        document.getElementById('description').innerHTML=intended_question[i][1]
+        exec(intended_question[i][3],globals())
+        print(i)
+        document.getElementById('hint').innerHTML=intended_question[i][4]
+        percent=((i+1)/len(intended_question))*100
+        print(percent)
+        percent = str(percent) + '%'
+        print(percent)
+        document.getElementById('progress').style.width=percent
+    updateLabel()
+
+    
+
+    def clickSubmit(event):
+        global answer
+        global get_result
+        global newWindow
+        global user_input
+        user_input=document["input"].value
+        get_result=eval(user_input)
+        print(get_result)
+
+        if get_result==answer:
+            window.alert('well done!')
+            document.getElementById('hint').style.display="block"
+
+        else:
+            alert("try again!")
+            document.getElementById("input").value=""
+            document.getElementById('input').focus()
+    document["submit-btn"].bind("click", clickSubmit)
+
+    def clickHint(event):
+        if document.getElementById('hint').style.display=="block":
+            document.getElementById('hint').style.display="none"
+        else:
+            document.getElementById('hint').style.display="block"
+    document["hint-btn"].bind("click", clickHint)
+
+    def clickNext(event):
+        document.getElementById('hint').style.display="none"
+        document.getElementById("input").value=""
+        document.getElementById('input').focus()
+        global i
+        i=i+1
+        updateLabel()
+        print(i)
+    document["next-btn"].bind("click", clickNext)
+
+    def clickForward(event):
+        document.getElementById('hint').style.display="none"
+        document.getElementById("input").value=""
+        document.getElementById('input').focus()
+        global i
+        i=i-1
+        updateLabel()
+        print(i)
+    document["forward-btn"].bind("click", clickForward)
+    </script>
+
+<body onload="brython()">
+    <div id="container">
+    <div id="header">
+        Learn <a href="https://docs.python.org/3/">Python</a> with <a href="https://brython.info">Brython</a>
+    </div>
+    <div id="chapter">
+    </div>
+    <div id="main">
+        <pre id="description">
+        </pre>
+        <div id="hint">
+        </div>
+    </div>
+    <div id="question">
+        <input id="input"> ==answer
+    </div>
+    <div id="button">
+        <button type="button" class="btn btn-primary" id="submit-btn">Submit</button>
+        <button type="button" class="btn btn-success" id="hint-btn">Hint</button>
+        <button type="button" class="btn btn-warning" id="forward-btn">Forward</button>
+        <button type="button" class="btn btn-danger" id="next-btn">Next</button>
+    </div>
+    <div class="progress">
+        <div id="progress" class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+        </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ricky project</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython_stdlib.js">
+    </script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style1.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head >
+
+    <script type="text/python">
+    from browser import document, html, alert, window
+    intended_question=[ 
+
+    ["generator","myList = list()\njam_generator = (n + ' jam' for n in ['apple',\n\t'pear','orange'])\nfor jam in jam_generator:\n\tmyList.append(jam)\n__==myList","question","myList = list()\njam_generator = (n + ' jam' for n in ['apple','pear','orange'])\nfor jam in jam_generator:\n\tmyList.append(jam)\nanswer=myList","['apple jam', 'pear jam', 'orange jam']"],
+    ["generator","fruits = ('apple' for n in range(3))\nattempt1 = list(fruits)\nattempt2 = list(fruits)\n__==list(attempt2)","question","fruits = ('apple' for n in range(3))\nattempt1 = list(fruits)\nattempt2 = list(fruits)\nanswer=list(attempt2)","[]"],
+    ["generator","def generator_method():\n\tyield 'apple'\n\tyield 'pear'\n\tyield 'pineapple'\n\tyield 'cherry'\nfruit = generator_method()\nnext(fruit)\n__==next(fruit)","question","def generator_method():\n\tyield 'apple'\n\tyield 'pear'\n\tyield 'pineapple'\n\tyield 'cherry'\nfruit = generator_method()\nnext(fruit)\nanswer=next(fruit)","'pear'"],
+    ["generator","def sum(nums):\n\tvalue = 0\n\tfor num in nums:\n\t\tvalue =value+num\n\t\tyield value\nresult = sum(range(2,5))\n__==list(result)","question","def sum(nums):\n\tvalue = 0\n\tfor num in nums:\n\t\tvalue =value+num\n\t\tyield value\nresult = sum(range(2,5))\nanswer=list(result)","[2, 5, 9]"],
+    ["generator","def generator_yield():\n\tvalue = yield\n\tif value:\n\t\tyield value\n\telse:\n\t\tyield 'no value'\ngenerator = generator_yield()\nnext(generator)\n__==generator.send(None)","question","def generator_yield():\n\tvalue = yield\n\tif value:\n\t\tyield value\n\telse:\n\t\tyield 'no value'\ngenerator = generator_yield()\nnext(generator)\nanswer=generator.send(None)","'no value'"],
+    ["Iteration","def test_iteration():\n\tfruits = iter(['apple','pear','orange'])\n\ttry:\n\t\tnext(fruits)\n\t\tnext(fruits)\n\t\tnext(fruits)\n\t\tresult=next(fruits)\n\t\treturn result\n\texcept StopIteration as ex:\n\t\treturn 'Ran out of iterations'\n__==test_iteration()","question","def test_iteration():\n\tfruits = iter(['apple','pear','orange'])\n\ttry:\n\t\tnext(fruits)\n\t\tnext(fruits)\n\t\tnext(fruits)\n\t\tresult=next(fruits)\n\t\treturn result\n\texcept StopIteration as ex:\n\t\treturn 'Ran out of iterations'\nanswer=test_iteration()","'Ran out of iterations'"],
+    ["Iteration","def addFive(item):\n\treturn item + 5\nnum_list = [1, 2, 3]\nmapped_list = list()\nmapping = map(addFive, num_list) \nfor item in mapping:\n\tmapped_list.append(item)\n__==mapped_list","question","def addFive(item):\n\treturn item + 5\nnum_list = [1, 2, 3]\nmapped_list = list()\nmapping = map(addFive, num_list) \nfor item in mapping:\n\tmapped_list.append(item)\nanswer=mapped_list","[6, 7, 8]"],
+    ["Iteration","def even(i):\n\treturn (i % 2) == 0\nnums = [1, 2, 3, 4, 5, 6]\neven_num = list()\nfor i in filter(even, nums):\n\teven_num.append(i)\n__==even_num","question","def even(item):\n\treturn (item % 2) == 0\nnums = [1, 2, 3, 4, 5, 6]\neven_num = list()\nfor item in filter(even, nums):\n\teven_num.append(item)\nanswer=even_num","[2, 4, 6]"],
+    ["Iteration","def first_found():\n\tdef big_fruit(i):\n\t\treturn len(i) > 5\n\tfruits = ['apple', 'pear', 'cherry', \n\t'pineapple']\n\tfruit = None\n\titerator = filter(big_fruit, fruits)\n\ttry:\n\t\tfruit = next(iterator)\n\t\treturn fruit\n\texcept StopIteration:\n\t\treturn 'Ran out of big names'\nanswer=first_found()","question","def first_found():\n\tdef big_fruit(i):\n\t\treturn len(i) > 5\n\tfruits = ['apple', 'pear', 'cherry', 'pineapple']\n\tfruit = None\n\titerator = filter(big_fruit, fruits)\n\ttry:\n\t\tfruit = next(iterator)\n\t\treturn fruit\n\texcept StopIteration:\n\t\treturn 'Ran out of big names'\nanswer=first_found()","'cherry'"],
+    ["Iteration","import functools\ndef multiply(a,b):\n\treturn a * b\nresult2 = functools.reduce(multiply, [1, 2, 3], \n\t2)\n__==result2","question","import functools\ndef multiply(a,b):\n\treturn a * b\nresult2 = functools.reduce(multiply, [1, 2, 3], 2)\nanswer=result2","12"]
+
+
+]
+
+
+
+    document.getElementById('input').focus()
+    global i
+    i=0
+    def updateLabel():
+        global percent
+        global correct_answer
+        document.getElementById('chapter').innerHTML=intended_question[i][0]
+        document.getElementById('description').innerHTML=intended_question[i][1]
+        exec(intended_question[i][3],globals())
+        print(i)
+        document.getElementById('hint').innerHTML=intended_question[i][4]
+        percent=((i+1)/len(intended_question))*100
+        print(percent)
+        percent = str(percent) + '%'
+        print(percent)
+        document.getElementById('progress').style.width=percent
+    updateLabel()
+
+    
+
+    def clickSubmit(event):
+        global answer
+        global get_result
+        global newWindow
+        global user_input
+        user_input=document["input"].value
+        get_result=eval(user_input)
+        print(get_result)
+
+        if get_result==answer:
+            window.alert('well done!')
+            document.getElementById('hint').style.display="block"
+
+        else:
+            alert("try again!")
+            document.getElementById("input").value=""
+            document.getElementById('input').focus()
+    document["submit-btn"].bind("click", clickSubmit)
+
+    def clickHint(event):
+        if document.getElementById('hint').style.display=="block":
+            document.getElementById('hint').style.display="none"
+        else:
+            document.getElementById('hint').style.display="block"
+    document["hint-btn"].bind("click", clickHint)
+
+    def clickNext(event):
+        document.getElementById('hint').style.display="none"
+        document.getElementById("input").value=""
+        document.getElementById('input').focus()
+        global i
+        i=i+1
+        updateLabel()
+        print(i)
+    document["next-btn"].bind("click", clickNext)
+
+    def clickForward(event):
+        document.getElementById('hint').style.display="none"
+        document.getElementById("input").value=""
+        document.getElementById('input').focus()
+        global i
+        i=i-1
+        updateLabel()
+        print(i)
+    document["forward-btn"].bind("click", clickForward)
+    </script>
+
+<body onload="brython()">
+    <div id="container">
+    <div id="header">
+        Learn <a href="https://docs.python.org/3/">Python</a> with <a href="https://brython.info">Brython</a>
+    </div>
+    <div id="chapter">
+    </div>
+    <div id="main">
+        <pre id="description">
+        </pre>
+        <div id="hint">
+        </div>
+    </div>
+    <div id="question">
+        <input id="input"> ==answer
+    </div>
+    <div id="button">
+        <button type="button" class="btn btn-primary" id="submit-btn">Submit</button>
+        <button type="button" class="btn btn-success" id="hint-btn">Hint</button>
+        <button type="button" class="btn btn-warning" id="forward-btn">Forward</button>
+        <button type="button" class="btn btn-danger" id="next-btn">Next</button>
+    </div>
+    <div class="progress">
+        <div id="progress" class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+        </div>
+    </div>
+    </div>
+</body>
+</html>
